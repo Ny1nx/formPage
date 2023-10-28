@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(32, 32, 32);
+            color: white;
+        }
+        button { box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+        background-color: cyan; color: white; outline: none; border: none; width: 200px; height: 50px; border-radius: 10px; transition: 0.3s ease-in-out }
+        button:hover { box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan; }
+            .txtArea{
+                background-color: rgb(228, 228, 228);
+            }
+            textarea{
+                color: black;
+            }
+            #likeBtn{
+                box-shadow: 0 0 5px black, 0 0 25px grey;
+            background-color: grey; color: white; outline: none; border: none;border-radius: 3px; transition: 0.3s ease-in-out;
+            }
+            #likeBtn:hover { box-shadow: 0 0 5px white, 0 0 50px white, 0 0 100px cyan, 0 0 300px cyan, 0 0 800px cyan; }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac03a17e-589d-4ac1-952a-4185d1070994/df4z3cg-368c337e-2d8c-4a1f-94e9-950ba93e721e.png/v1/fill/w_1280,h_1494/spy_x_family_render__anya__by_minhchauk1k_df4z3cg-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQ5NCIsInBhdGgiOiJcL2ZcL2FjMDNhMTdlLTU4OWQtNGFjMS05NTJhLTQxODVkMTA3MDk5NFwvZGY0ejNjZy0zNjhjMzM3ZS0yZDhjLTRhMWYtOTRlOS05NTBiYTkzZTcyMWUucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ._nA9LIjUquiSB9YyD--W68BS5GY16vqGYHSjCAl69DQ" width="150">
+            <br />
+            <pre><input id="likeBtn" type="button" value="Like">        <input type="button" value="Share"></pre>  
+            <!-- <button style="width: 500px; height: 500px;">img</button> -->
+        </div>
+        <div>
+            <form action="/action.php">
+                <textarea class="txtArea" name="Comment" id="Comments" placeholder="Type Your Comment" cols="30" rows="5"></textarea>
+            </form>
+        </div>
+        <div>
+            <h3>Feedback</h3>
+            <label for="1">
+            <input type="radio" value="Good" name="feedback" id="1"> Good
+            </label>
+            <label for="2">
+            <input type="radio" value="Bad" name="feedback" id="2"> Bad
+            </label>
+            <label for="3">
+            <input type="radio" value="Okay" name="feedback" id="3"> Okay
+            </label>
+        </div>
+        <div>
+            <pre>Made By <a href="https://www.google.com/" target="_main">Shahrukh</a></pre>
+        </div>
+        <button>Glow Buttton</button> 
+    </main>
+    <!-- <div style="width: 40px; height: 30px; border: 1px solid black;">Div Button</div> -->
+    <!-- <script>
+        const likeBtn = document.querySelector("#likeBtn");
+        likeBtn.addEventListener("click", ()=>{
+            if (document.querySelector("#likeBtn").value == "Like"){
+                document.querySelector("#likeBtn").value = "Unlike";
+            }
+            else{
+
+                document.querySelector("#likeBtn").value = "Like";
+            }
+        });
+        const helloBtn = document.querySelector("button");
+        helloBtn.addEventListener("click", ()=>{
+            document.querySelector("button").innerHTML = "FU";
+            document.querySelector("button").style.backgroundImage = "url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac03a17e-589d-4ac1-952a-4185d1070994/df4z3cg-368c337e-2d8c-4a1f-94e9-950ba93e721e.png/v1/fill/w_1280,h_1494/spy_x_family_render__anya__by_minhchauk1k_df4z3cg-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQ5NCIsInBhdGgiOiJcL2ZcL2FjMDNhMTdlLTU4OWQtNGFjMS05NTJhLTQxODVkMTA3MDk5NFwvZGY0ejNjZy0zNjhjMzM3ZS0yZDhjLTRhMWYtOTRlOS05NTBiYTkzZTcyMWUucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ._nA9LIjUquiSB9YyD--W68BS5GY16vqGYHSjCAl69DQ)"
+            document.querySelector("button").style.color = "white"
+            document.querySelector("button").style.backgroundSize = "cover"
+        });
+        
+    </script> -->
+
+</body>
+</html>
